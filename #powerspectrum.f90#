@@ -1,0 +1,2 @@
+subroutine powerspectrum
+  use fftw
