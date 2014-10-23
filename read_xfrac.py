@@ -18,7 +18,9 @@ def read_xfrac(filename):
 def get_space(data3d,x,y,z):
     a = data3d[0:100,0:100,0:5]
     b = numpy.zeros(shape=(100,100), dtype=numpy.float64)
-    b[:,:] = numpy.sum(a[:,:], dtype=numpy.float64)/5
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            b[i,j] = numpy.sum(a[i,j], dtype=numpy.float64)/5
     return b
 
 filename = "/mnt/lustre/scratch/cs390/codes/ionz_codes/withoutprevxfrac/38000.00/xfrac3d_8.064.bin"
