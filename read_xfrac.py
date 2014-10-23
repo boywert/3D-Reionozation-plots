@@ -11,7 +11,7 @@ def read_xfrac(filename):
     output.grid = numpy.fromfile(f,numpy.int32,3)
     padd = numpy.fromfile(f,numpy.int32,1)[0]
     padd = numpy.fromfile(f,numpy.int32,1)[0]
-    output.data = numpy.fromfile(f,numpy.float32,output.grid[0]**3).reshape((grid[0],grid[1],grid[2]))
+    output.data = numpy.fromfile(f,numpy.float32,output.grid[0]**3).reshape(( output.grid[0], output.grid[1], output.grid[2]))
     padd = numpy.fromfile(f,numpy.int32,1)[0]
     return output
 
