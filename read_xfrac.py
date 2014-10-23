@@ -21,5 +21,5 @@ xfrac = read_xfrac(filename)
 mean = numpy.sum(xfrac.data,dtype=numpy.float64)/(xfrac.grid[0]*xfrac.grid[1]*xfrac.grid[2])
 xfrac.data = xfrac.data/mean - 1.0
 
-ps = numpy.rfftn(xfrac.data)
+ps = numpy.fft.rfftn(xfrac.data)
 print ps
