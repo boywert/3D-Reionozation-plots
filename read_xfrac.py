@@ -43,40 +43,47 @@ def get_plot(filename,doubleflag,x,y,z):
 #global x,y,z
 
 
-def plot_reionized(redshift):
-    x = (0,306)
-    y = (0,306)
-    z = (200,205)
-    fig = pylab.figure()
-    gs = gridspec.GridSpec(1, 3, width_ratios=[1,1,1]) 
-    ax6 = pylab.subplot(gs[0,0])
-    filename = "/mnt/lustre/scratch/cs390/codes/ionz_codes/nosuppresswithhist/5500.00/xfrac3d_"+redshift+".bin"
-    data_plot = get_plot(filename,0,x,y,z)
-    im6= ax6.imshow(data_plot, cmap=cm.RdBu, vmin=0.0, vmax=1.0, extent=[x[0], x[1], y[0], y[1]])
-    ax6.axis("off")
-    #im6.set_interpolation('bilinear')
 
-    ax4 = pylab.subplot(gs[0,1])
-    filename = "/mnt/lustre/scratch/cs390/codes/ionz_codes/okamotowithhist/5500.00/xfrac3d_"+redshift+".bin"
-    data_plot = get_plot(filename,0,x,y,z)
-    im4 = ax4.imshow(data_plot, cmap=cm.RdBu, vmin=0.0, vmax=1.0, extent=[x[0], x[1], y[0], y[1]])
-    ax4.axis("off")
-    #im4.set_interpolation('bilinear')    
-    ax5 = pylab.subplot(gs[0,2])
-    filename = "/mnt/lustre/scratch/cs390/47Mpc/couple/model_001/xfrac/5500.00/xfrac3d_"+redshift+".bin"
-    data_plot = get_plot(filename,0,x,y,z)
-    im5 = ax5.imshow(data_plot, cmap=cm.RdBu, vmin=0.0, vmax=1.0, extent=[x[0], x[1], y[0], y[1]])
-    ax5.axis("off")
-    #im5.set_interpolation('bilinear')
-    #cb = fig.colorbar(im1, ax=ax1 )
+def plot_reionized(nrow,ncol,filelist,redshift):
+    fig = pylab.figure()
+    gs_width_ratios = []
+    gs_heigh_ratios = []
+    for i in range(nrow):
+        gs_high_ratios.append(1.)
+    for i in range(ncol):
+        gs_width_ratios.append(1.)
+    gs = gridspec.GridSpec(nrow, ncol, width_ratios=gs_width_ratios, high_ratios = gs_high_ratios) 
+    ax = []
+    im = []
+    ifile = 0
+    for i in range(nrow):
+        for j in range(ncol):
+            if(i*nrow+j < len(filelist)):
+                ax.append(pylab.subplot(gs[i,j]))
+                filename = filelist[ifile]+"/xfrac3d_"+redshift+".bin"
+                data_plot = get_plot(filename,0,x,y,z)
+                im.append(ax[ifile].imshow(data_plot, cmap=cm.RdBu, vmin=0.0, vmax=1.0, extent=[x[0], x[1], y[0], y[1]]))
+                ax[ifile].axis("off")
+                ifile += 1
+            #im6.set_interpolation('bilinear')
+
     fig.savefig(redshift+"_pic.pdf", bbox_inches='tight')
     
-plot_reionized("9.938")
-plot_reionized("9.457")
-plot_reionized("9.026")
-plot_reionized("8.515")
-plot_reionized("7.960")
-plot_reionized("7.480")
-plot_reionized("6.981")
-plot_reionized("6.483")
+
+x = (0,306)
+y = (0,306)
+z = (200,205)
+
+nrow = 1
+ncol = 3
+filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosuppresswithhist/5500.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/okamotowithhist/5500.00/","/mnt/lustre/scratch/cs390/47Mpc/couple/model_001/xfrac/5500.00/"]
+
+plot_reionized(nrow,ncol,filelist,"9.938")
+plot_reionized(nrow,ncol,filelist,"9.457")
+plot_reionized(nrow,ncol,filelist,"9.026")
+plot_reionized(nrow,ncol,filelist,"8.515")
+plot_reionized(nrow,ncol,filelist,"7.960")
+plot_reionized(nrow,ncol,filelist,"7.480")
+plot_reionized(nrow,ncol,filelist,"6.981")
+plot_reionized(nrow,ncol,filelist,"6.483")
 
