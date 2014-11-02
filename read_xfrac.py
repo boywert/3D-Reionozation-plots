@@ -47,12 +47,12 @@ def get_plot(filename,doubleflag,x,y,z):
 def plot_reionized(nrow,ncol,filelist,redshift):
     fig = pylab.figure()
     gs_width_ratios = []
-    gs_heigh_ratios = []
+    gs_height_ratios = []
     for i in range(nrow):
-        gs_high_ratios.append(1.)
+        gs_height_ratios.append(1.)
     for i in range(ncol):
         gs_width_ratios.append(1.)
-    gs = gridspec.GridSpec(nrow, ncol, width_ratios=gs_width_ratios, high_ratios = gs_high_ratios) 
+    gs = gridspec.GridSpec(nrow, ncol, width_ratios=gs_width_ratios, height_ratios = gs_height_ratios) 
     ax = []
     im = []
     ifile = 0
