@@ -76,7 +76,7 @@ z = (200,205)
 
 nrow = 1
 ncol = 2
-filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithhist/5500.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/43000.00/"]
+filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithhist/5500.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/41000.00/"]
 doubleflaglist =[0,0]
 prefix = "compare_hist_nohist_"
 plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.938",prefix)
