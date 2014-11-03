@@ -2,7 +2,7 @@ import numpy
 import pylab
 from pylab import *
 from matplotlib import gridspec
-
+import os.path
 class xfrac:
     grid = 0
     data = 0
@@ -61,7 +61,13 @@ def plot_reionized(nrow,ncol,filelist,doubleflaglist,redshift,prefix):
             if(i*nrow+j < len(filelist)):
                 ax.append(pylab.subplot(gs[i,j]))
                 filename = filelist[ifile]+"/xfrac3d_"+redshift+".bin"
-                data_plot = get_plot(filename,doubleflaglist[ifile],x,y,z)
+                if os.path.exists(filename):
+                    data_plot = get_plot(filename,doubleflaglist[ifile],x,y,z)
+                else:
+                    if(float(redshift) > 10.0):
+                        data_plot = numpy.zeros((306,306))
+                    else:
+                        data_plot = numpy.ones((306,306))
                 im.append(ax[ifile].imshow(data_plot, cmap=cm.RdBu, vmin=0.0, vmax=1.0, extent=[x[0], x[1], y[0], y[1]]))
                 ax[ifile].axis("off")
                 ifile += 1
