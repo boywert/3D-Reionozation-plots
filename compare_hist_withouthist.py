@@ -75,10 +75,13 @@ y = (0,306)
 z = (200,205)
 
 nrow = 1
-ncol = 2
-filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithhist/5500.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/41000.00/"]
-doubleflaglist =[0,0]
+ncol = 3
+filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithhist/5500.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/40000.00/","/research/prace/47Mpc_RT/47Mpc_f2_gs_306/results/"]
+doubleflaglist =[0,0,1]
 prefix = "compare_hist_nohist_"
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"12.048",prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"11.090",prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"10.478",prefix)
 plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.938",prefix)
 plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.457",prefix)
 plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.026",prefix)
