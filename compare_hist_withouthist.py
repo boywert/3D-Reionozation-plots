@@ -79,12 +79,12 @@ ncol = 2
 filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupswithhist/5500.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/43000.00/"]
 doubleflaglist =[0,0]
 prefix = "compare_hist_nohist_"
-plot_reionized(nrow,ncol,filelist,"9.938",doubleflaglist,prefix)
-plot_reionized(nrow,ncol,filelist,"9.457",doubleflaglist,prefix)
-plot_reionized(nrow,ncol,filelist,"9.026",doubleflaglist,prefix)
-plot_reionized(nrow,ncol,filelist,"8.515",doubleflaglist,prefix)
-plot_reionized(nrow,ncol,filelist,"7.960",doubleflaglist,prefix)
-plot_reionized(nrow,ncol,filelist,"7.480",doubleflaglist,prefix)
-plot_reionized(nrow,ncol,filelist,"6.981",doubleflaglist,prefix)
-plot_reionized(nrow,ncol,filelist,"6.483",doubleflaglist,prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.938",prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.457",prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.026",prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"8.515",prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"7.960",prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"7.480",prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"6.981",prefix)
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"6.483",prefix)
 
