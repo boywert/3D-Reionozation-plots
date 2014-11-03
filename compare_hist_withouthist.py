@@ -44,7 +44,7 @@ def get_plot(filename,doubleflag,x,y,z):
 
 
 
-def plot_reionized(nrow,ncol,filelist,doubleflaglist,redshift):
+def plot_reionized(nrow,ncol,filelist,doubleflaglist,redshift,prefix):
     fig = pylab.figure()
     gs_width_ratios = []
     gs_height_ratios = []
@@ -67,7 +67,7 @@ def plot_reionized(nrow,ncol,filelist,doubleflaglist,redshift):
                 ifile += 1
             #im6.set_interpolation('bilinear')
 
-    fig.savefig(redshift+"_pic.pdf", bbox_inches='tight')
+    fig.savefig(prefix+redshift+"_pic.pdf", bbox_inches='tight')
     
 
 x = (0,306)
@@ -75,15 +75,16 @@ y = (0,306)
 z = (200,205)
 
 nrow = 1
-ncol = 3
-filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosuppresswithhist/5500.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/okamotowithhist/5500.00/","/mnt/lustre/scratch/cs390/47Mpc/couple/model_001/xfrac/5500.00/"]
-doubleflaglist =[0,0,0]
-plot_reionized(nrow,ncol,filelist,"9.938")
-plot_reionized(nrow,ncol,filelist,"9.457")
-plot_reionized(nrow,ncol,filelist,"9.026")
-plot_reionized(nrow,ncol,filelist,"8.515")
-plot_reionized(nrow,ncol,filelist,"7.960")
-plot_reionized(nrow,ncol,filelist,"7.480")
-plot_reionized(nrow,ncol,filelist,"6.981")
-plot_reionized(nrow,ncol,filelist,"6.483")
+ncol = 2
+filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupswithhist/5500.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/43000.00/"]
+doubleflaglist =[0,0]
+prefix = "compare_hist_nohist_"
+plot_reionized(nrow,ncol,filelist,"9.938",prefix)
+plot_reionized(nrow,ncol,filelist,"9.457",prefix)
+plot_reionized(nrow,ncol,filelist,"9.026",prefix)
+plot_reionized(nrow,ncol,filelist,"8.515",prefix)
+plot_reionized(nrow,ncol,filelist,"7.960",prefix)
+plot_reionized(nrow,ncol,filelist,"7.480",prefix)
+plot_reionized(nrow,ncol,filelist,"6.981",prefix)
+plot_reionized(nrow,ncol,filelist,"6.483",prefix)
 
