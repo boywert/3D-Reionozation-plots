@@ -76,7 +76,7 @@ z = (200,205)
 
 nrow = 1
 ncol = 3
-filelist = ["/mnt/lustre/scratch/cs390/47Mpc/couple/model_002/xfrac/43000.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/okamotowithnohist/43000.01/","/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/43000.00/"]
+filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/43000.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/okamotowithnohist/43000.01/","/mnt/lustre/scratch/cs390/47Mpc/couple/model_002/xfrac/43000.00/"]
 doubleflaglist =[0,0,0]
 plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.938")
 plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.457")
