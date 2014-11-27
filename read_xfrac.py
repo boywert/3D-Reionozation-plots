@@ -78,12 +78,12 @@ nrow = 1
 ncol = 3
 filelist = ["/mnt/lustre/scratch/cs390/47Mpc/couple/model_002/xfrac/43000.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/okamotowithnohist/43000.01/","/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/43000.00/"]
 doubleflaglist =[0,0,0]
-plot_reionized(nrow,ncol,filelist,0,"9.938")
-plot_reionized(nrow,ncol,filelist,0,"9.457")
-plot_reionized(nrow,ncol,filelist,0,"9.026")
-plot_reionized(nrow,ncol,filelist,0,"8.515")
-plot_reionized(nrow,ncol,filelist,0,"7.960")
-plot_reionized(nrow,ncol,filelist,0,"7.480")
-plot_reionized(nrow,ncol,filelist,0,"6.981")
-plot_reionized(nrow,ncol,filelist,0,"6.483")
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.938")
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.457")
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"9.026")
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"8.515")
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"7.960")
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"7.480")
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"6.981")
+plot_reionized(nrow,ncol,filelist,doubleflaglist,"6.483")
 
