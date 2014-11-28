@@ -24,9 +24,9 @@ def read_xfrac(filename,doubleflag):
 zlistfile = "/mnt/lustre/scratch/cs390/47Mpc/snap_z3.txt"
 zlist_str = open(zlistfile,"r").readlines()
 z = []
-for zi in zlist_str:
-    zi = zi.strip()
-    z.append(float(zi))
+for i in range(len(zlist_str)):
+    zlist_str[i] = zlist_str[i].strip()
+    z.append(float(zlist_str[i]))
 
 model_names = ["no_suppress","okamoto","patchy_I"]
 filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/43000.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/okamotowithnohist/43000.01/","/mnt/lustre/scratch/cs390/47Mpc/couple/model_002/xfrac/43000.00/"]
