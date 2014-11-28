@@ -32,14 +32,14 @@ model_names = ["no_suppress","okamoto","patchy_I"]
 filelist = ["/mnt/lustre/scratch/cs390/codes/ionz_codes/nosupwithnohist/43000.00/","/mnt/lustre/scratch/cs390/codes/ionz_codes/okamotowithnohist/43000.01/","/mnt/lustre/scratch/cs390/47Mpc/couple/model_002/xfrac/43000.00/"]
 doubleflaglist =[0,0,0]
 
-xfrac = {}
+xf = {}
 for i in range(len(model_names)):
     index = model_names[i]
-    xfrac[index] = []
+    xf[index] = []
     for j in range(len(z)):
         filename = filelist[i]+"/xfrac3d_"+zlist_str[j]+".bin"
-        xfrac =  read_xfrac(filename,0)
-        xfrac[index].append(xfrac)
+        xfd =  read_xfrac(filename,0)
+        xf[index].append(xfd)
 
 for i in range(len(z)):
-    print z[i],xfrac[model_names[0]][i],xfrac[model_names[1]][i],xfrac[model_names[2]][i]
+    print z[i],xf[model_names[0]][i],xf[model_names[1]][i],xf[model_names[2]][i]
