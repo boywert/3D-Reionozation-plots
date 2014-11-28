@@ -3,7 +3,7 @@ import pylab
 from pylab import *
 from matplotlib import gridspec
 
-class xfrac(object):
+class xfrac():
     grid = 0
     data = 0
 
@@ -18,8 +18,8 @@ def read_xfrac(filename,doubleflag):
         output.data = numpy.fromfile(f,numpy.float64,output.grid[0]**3)
     else:
         output.data = numpy.fromfile(f,numpy.float32,output.grid[0]**3)
-    xfrac = numpy.sum(output.data, dtype=numpy.float64)/output.grid[0]**3
-    return xfrac
+    xfr = numpy.sum(output.data, dtype=numpy.float64)/output.grid[0]**3
+    return xfr
 
 zlistfile = "/mnt/lustre/scratch/cs390/47Mpc/snap_z3.txt"
 zlist_str = open(zlistfile,"r").readlines()
