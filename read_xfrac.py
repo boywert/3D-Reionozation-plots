@@ -3,7 +3,7 @@ import pylab
 from pylab import *
 from matplotlib import gridspec
 
-class xfrac:
+class xfrac(object):
     grid = 0
     data = 0
 
